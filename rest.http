@@ -1,0 +1,56 @@
+#APi testing for our transcation history 
+@userApi = http://localhost:8000/api/v1/user
+@transApi = http://localhost:8000/api/v1/transaction
+
+#API testing for our 
+
+### check server status
+GET http://localhost:8000
+
+#=========== User apis
+### User get APIs
+GET {{userApi}}
+
+### User Post APIs
+POST {{userApi}}
+Content-Type: application/json
+
+{
+    "name": "Rabin",
+    "email": "rabin908774@gmail.com",
+    "password": "1234"
+}
+
+### login 
+POST {{userApi}}/login
+Content-Type: application/json
+
+{
+    "email": "rabin908774@gmail.com",
+    "password": "1234"
+}
+
+### User Put APIs
+PUT  {{userApi}}
+
+### User Patch APIs
+PATCH  {{userApi}}
+
+### User Delete APIs
+DELETE  {{userApi}}
+
+#=========== transcation apis
+### trans get APIs
+GET {{transApi}}
+
+### trans post APIs
+POST  {{transApi}}
+Content-Type: application/json
+Authorization: 6552fecc24b5ef1131a37c34
+
+{
+    "amount": "12354",
+    "date": "01-11-2024",
+    "title": "Shopping",
+    "type": "income"
+}
