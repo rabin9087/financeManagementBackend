@@ -7,9 +7,13 @@ export const insertTrans = (transObj) => {
 
 //read transaction by user _id
 export const getUserTrans = (userId) => {
-    return TransSchema.find({userId});
+    return TransSchema.find({ userId });
 }
 
 //Delete transaction
+
+export const deleteManyIds = (userId, idsArg) => {
+    return TransSchema.deleteMany({ userId, _id: { $in: idsArg, } })
+}
 
 //Update transaction  -homework
